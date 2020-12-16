@@ -1,9 +1,9 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat/flutter_chat.dart';
-import 'package:flutter_chat/MessageFied.dart';
-import 'package:flutter_chat/models/Message.dart';
-import 'package:flutter_chat/ButtonScrollDown.dart';
+import 'package:flutter_chat_components/flutter_chat_components.dart';
+import 'package:flutter_chat_components/MessageFied.dart';
+import 'package:flutter_chat_components/models/Message.dart';
+import 'package:flutter_chat_components/ButtonScrollDown.dart';
 
 void main() {
   runApp(MyApp());

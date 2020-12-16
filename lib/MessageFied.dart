@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chat/models/Message.dart';
+import 'package:flutter_chat_components/models/Message.dart';
 
 class MessageField extends StatefulWidget {
   final Function(MessageModel) onSend;

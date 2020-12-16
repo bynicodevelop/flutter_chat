@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chat/MessageFied.dart';
-import 'package:flutter_chat/models/Message.dart';
+import 'package:flutter_chat_components/MessageFied.dart';
+import 'package:flutter_chat_components/models/Message.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 main() {
