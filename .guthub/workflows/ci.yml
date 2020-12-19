@@ -1,4 +1,4 @@
-name: Flutter release
+name: Flutter Chat
 
 on:
   push:
