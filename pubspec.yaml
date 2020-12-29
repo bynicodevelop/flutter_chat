@@ -1,6 +1,6 @@
 name: flutter_chat_components
 description: Allows you to create a cat with the different elements that compose it.
-version: 0.0.1+1
+version: 0.0.1+2
 homepage: https://github.com/bynicodevelop/flutter_chat
 
 environment:
@@ -12,7 +12,7 @@ dependencies:
     sdk: flutter
 
   flutter_chat_bubble: ^1.0.2
-  flutter_models: ^0.0.2
+  flutter_models: ^0.0.3+1
 
 dev_dependencies:
   flutter_test:
