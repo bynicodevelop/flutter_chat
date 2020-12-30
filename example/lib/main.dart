@@ -43,6 +43,15 @@ class _MyAppState extends State<MyApp> {
 
     DateTime date = DateTime.now().add(Duration(seconds: 30));
 
+    _messages.add(
+      MessageModel(
+        uid: _faker.guid.guid(),
+        userUid: _usersId[0],
+        text: 'First message',
+        sendAt: date.subtract(Duration(minutes: 31)).millisecondsSinceEpoch,
+      ),
+    );
+
     for (int i = 0; i < 30; i++) {
       int randInt = _faker.randomGenerator.integer(9);
 

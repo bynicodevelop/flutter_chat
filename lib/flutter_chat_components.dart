@@ -30,21 +30,21 @@ class _ChatState extends State<Chat> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (widget.scrollController != null) {
-        widget.scrollController
-            .jumpTo(widget.scrollController.position.maxScrollExtent + 100.0);
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+    //   if (widget.scrollController != null) {
+    //     widget.scrollController
+    //         .jumpTo(widget.scrollController.position.maxScrollExtent + 100.0);
 
-        widget.scrollController.addListener(() {
-          double maxScroll = widget.scrollController.position.maxScrollExtent;
-          double currentScroll = widget.scrollController.position.pixels;
+    //     widget.scrollController.addListener(() {
+    //       double maxScroll = widget.scrollController.position.maxScrollExtent;
+    //       double currentScroll = widget.scrollController.position.pixels;
 
-          if (widget.isBottom != null) {
-            widget.isBottom(maxScroll - currentScroll >= widget.deltaBottom);
-          }
-        });
-      }
-    });
+    //       if (widget.isBottom != null) {
+    //         widget.isBottom(maxScroll - currentScroll >= widget.deltaBottom);
+    //       }
+    //     });
+    //   }
+    // });
   }
 
   @override
@@ -74,32 +74,25 @@ class _ChatState extends State<Chat> {
                   alignment:
                       isCurrentUser ? Alignment.topRight : Alignment.topLeft,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          widget.messages[index].text,
-                          style: TextStyle(
-                            color: isCurrentUser ? Colors.white : Colors.black,
-                          ),
+                      Text(
+                        widget.messages[index].text,
+                        style: TextStyle(
+                          color: isCurrentUser ? Colors.white : Colors.black,
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                            top: 4.0,
-                          ),
-                          child: Text(
-                            formatTime(widget.messages[index].sendAt),
-                            style: Theme.of(context).textTheme.caption.copyWith(
-                                color: isCurrentUser
-                                    ? Colors.white
-                                    : Theme.of(context)
-                                        .textTheme
-                                        .caption
-                                        .color),
-                          ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 4.0,
+                        ),
+                        child: Text(
+                          formatTime(widget.messages[index].sendAt),
+                          style: Theme.of(context).textTheme.caption.copyWith(
+                              color: isCurrentUser
+                                  ? Colors.white
+                                  : Theme.of(context).textTheme.caption.color),
                         ),
                       ),
                     ],

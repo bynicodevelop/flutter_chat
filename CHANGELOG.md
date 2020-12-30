@@ -1,3 +1,7 @@
+## 0.0.2+1
+
+- Fixed size of bubble.
+
 ## 0.0.2
 
 - Added dates in bubbles.
