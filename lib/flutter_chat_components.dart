@@ -30,21 +30,21 @@ class _ChatState extends State<Chat> {
   void initState() {
     super.initState();
 
-    // WidgetsBinding.instance.addPostFrameCallback((_) {
-    //   if (widget.scrollController != null) {
-    //     widget.scrollController
-    //         .jumpTo(widget.scrollController.position.maxScrollExtent + 100.0);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (widget.scrollController != null) {
+        widget.scrollController
+            .jumpTo(widget.scrollController.position.maxScrollExtent + 100.0);
 
-    //     widget.scrollController.addListener(() {
-    //       double maxScroll = widget.scrollController.position.maxScrollExtent;
-    //       double currentScroll = widget.scrollController.position.pixels;
+        widget.scrollController.addListener(() {
+          double maxScroll = widget.scrollController.position.maxScrollExtent;
+          double currentScroll = widget.scrollController.position.pixels;
 
-    //       if (widget.isBottom != null) {
-    //         widget.isBottom(maxScroll - currentScroll >= widget.deltaBottom);
-    //       }
-    //     });
-    //   }
-    // });
+          if (widget.isBottom != null) {
+            widget.isBottom(maxScroll - currentScroll >= widget.deltaBottom);
+          }
+        });
+      }
+    });
   }
 
   @override
