@@ -3,6 +3,7 @@ import 'package:flutter_models/models/MessageModel.dart';
 import 'package:flutter_chat_bubble/bubble_type.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_5.dart';
+import 'package:time_formatter/time_formatter.dart';
 
 class Chat extends StatefulWidget {
   final Function(bool) isBottom;
@@ -72,11 +73,36 @@ class _ChatState extends State<Chat> {
                   ),
                   alignment:
                       isCurrentUser ? Alignment.topRight : Alignment.topLeft,
-                  child: Text(
-                    widget.messages[index].text,
-                    style: TextStyle(
-                      color: isCurrentUser ? Colors.white : Colors.black,
-                    ),
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          widget.messages[index].text,
+                          style: TextStyle(
+                            color: isCurrentUser ? Colors.white : Colors.black,
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            top: 4.0,
+                          ),
+                          child: Text(
+                            formatTime(widget.messages[index].sendAt),
+                            style: Theme.of(context).textTheme.caption.copyWith(
+                                color: isCurrentUser
+                                    ? Colors.white
+                                    : Theme.of(context)
+                                        .textTheme
+                                        .caption
+                                        .color),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               );

@@ -41,13 +41,7 @@ class _MyAppState extends State<MyApp> {
       _faker.guid.guid(),
     ]);
 
-    _messages.add(
-      MessageModel(
-        uid: _faker.guid.guid(),
-        userUid: _usersId[0],
-        text: 'First message',
-      ),
-    );
+    DateTime date = DateTime.now().add(Duration(seconds: 30));
 
     for (int i = 0; i < 30; i++) {
       int randInt = _faker.randomGenerator.integer(9);
@@ -57,6 +51,9 @@ class _MyAppState extends State<MyApp> {
           uid: _faker.guid.guid(),
           userUid: randInt % 2 != 0 ? _usersId[0] : _usersId[1],
           text: _faker.lorem.sentences(2).join('\n'),
+          sendAt: date
+              .subtract(Duration(minutes: 30 - (i + 1)))
+              .millisecondsSinceEpoch,
         ),
       );
     }

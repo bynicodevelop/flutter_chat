@@ -82,14 +82,14 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1+2"
+    version: "0.0.2"
   flutter_models:
     dependency: transitive
     description:
       name: flutter_models
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.3+1"
+    version: "0.0.3+3"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -163,6 +163,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.19-nullsafety.2"
+  time_formatter:
+    dependency: transitive
+    description:
+      name: time_formatter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0+5"
   typed_data:
     dependency: transitive
     description:

@@ -1,3 +1,7 @@
+## 0.0.2
+
+- Added dates in bubbles.
+
 ## 0.0.1+2
 
 - Updated the positions of bubbles
