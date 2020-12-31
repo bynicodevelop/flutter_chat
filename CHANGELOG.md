@@ -1,3 +1,7 @@
+## 0.0.2+4
+
+- Updated colors bubble
+
 ## 0.0.2+3
 
 - Updated labels properties of chat.
