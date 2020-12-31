@@ -12,6 +12,8 @@ class Chat extends StatefulWidget {
   final String currentUserUid;
   final double deltaBottom;
 
+  final String labelMessageNotFound;
+
   const Chat({
     Key key,
     @required this.messages,
@@ -19,6 +21,7 @@ class Chat extends StatefulWidget {
     this.isBottom,
     this.scrollController,
     this.deltaBottom = 200.0,
+    this.labelMessageNotFound = 'No message found...',
   }) : super(key: key);
 
   @override
@@ -103,7 +106,7 @@ class _ChatState extends State<Chat> {
           )
         : Container(
             child: Center(
-              child: Text('No message found...'),
+              child: Text(widget.labelMessageNotFound),
             ),
           );
   }

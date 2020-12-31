@@ -5,10 +5,13 @@ class MessageField extends StatefulWidget {
   final Function(MessageModel) onSend;
   final String currentUserUid;
 
+  final String labelPlaceholder;
+
   const MessageField({
     Key key,
     @required this.onSend,
     @required this.currentUserUid,
+    this.labelPlaceholder = 'Entrez votre message',
   }) : super(key: key);
 
   @override
@@ -56,7 +59,7 @@ class _MessageFieldState extends State<MessageField> {
                     border: InputBorder.none,
                     filled: true,
                     fillColor: Colors.white,
-                    hintText: 'Entrez votre  message',
+                    hintText: widget.labelPlaceholder,
                   ),
                 ),
               ),

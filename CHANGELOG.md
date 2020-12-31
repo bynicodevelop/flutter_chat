@@ -1,3 +1,7 @@
+## 0.0.2+3
+
+- Updated labels properties of chat.
+
 ## 0.0.2+2
 
 - Fixed size of bubble (with uncomment).
