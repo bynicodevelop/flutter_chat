@@ -68,7 +68,9 @@ class _ChatState extends State<Chat> {
                   right: !isCurrentUser ? 50.0 : 2.0,
                 ),
                 child: ChatBubble(
-                  backGroundColor: isCurrentUser ? Colors.blue : Colors.white,
+                  backGroundColor: isCurrentUser
+                      ? Theme.of(context).primaryColor
+                      : Colors.white,
                   clipper: ChatBubbleClipper5(
                     type: isCurrentUser
                         ? BubbleType.sendBubble
@@ -80,12 +82,11 @@ class _ChatState extends State<Chat> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
-                        widget.messages[index].text,
-                        style: TextStyle(
-                          color: isCurrentUser ? Colors.white : Colors.black,
-                        ),
-                      ),
+                      Text(widget.messages[index].text,
+                          style: Theme.of(context).textTheme.bodyText2.copyWith(
+                                color:
+                                    isCurrentUser ? Colors.white : Colors.black,
+                              )),
                       Padding(
                         padding: const EdgeInsets.only(
                           top: 4.0,
